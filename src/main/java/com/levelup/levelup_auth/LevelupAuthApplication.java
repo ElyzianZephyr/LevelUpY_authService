@@ -1,0 +1,13 @@
+package com.levelup.levelup_auth;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class LevelupAuthApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(LevelupAuthApplication.class, args);
+	}
+
+}
