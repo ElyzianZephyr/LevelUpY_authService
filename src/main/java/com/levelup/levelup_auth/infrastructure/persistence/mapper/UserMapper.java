@@ -1,6 +1,8 @@
 package com.levelup.levelup_auth.infrastructure.persistence.mapper;
 
+import com.levelup.levelup_auth.domain.model.Email;
 import com.levelup.levelup_auth.domain.model.Login;
+import com.levelup.levelup_auth.domain.model.Name;
 import com.levelup.levelup_auth.domain.model.Password;
 import com.levelup.levelup_auth.domain.model.User;
 import com.levelup.levelup_auth.domain.model.UserId;
@@ -18,7 +20,9 @@ public class UserMapper {
         return new UserEntity(
                 user.getId().value(),
                 user.getLogin().value(),
-                user.getPassword().hashedValue()
+                user.getPassword().hashedValue(),
+                user.getEmail().map(Email::value).orElse(null),
+                user.getName().map(Name::value).orElse(null)
         );
     }
 
@@ -30,7 +34,9 @@ public class UserMapper {
         return new User(
                 new UserId(entity.getId()),
                 new Login(entity.getLogin()),
-                new Password(entity.getPasswordHash())
+                new Password(entity.getPasswordHash()),
+                entity.getEmail() != null ? new Email(entity.getEmail()) : null,
+                entity.getName() != null ? new Name(entity.getName()) : null
         );
     }
 }

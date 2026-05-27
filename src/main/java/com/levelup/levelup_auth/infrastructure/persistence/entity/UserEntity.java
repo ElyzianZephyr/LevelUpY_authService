@@ -27,4 +27,10 @@ public class UserEntity {
 
     @Column(name = "password_hash", nullable = false)
     private String passwordHash;
+
+    @Column(name = "email", length = 100)
+    private String email;
+
+    @Column(name = "name", length = 100)
+    private String name;
 }
