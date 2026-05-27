@@ -11,6 +11,6 @@ public record Login(String value) {
         if (value.length() < 3 || value.length() > 50) {
             throw new IllegalArgumentException("Длина логина должна быть от 3 до 50 символов");
         }
-        // Здесь может быть регулярное выражение для проверки символов
+
     }
 }
