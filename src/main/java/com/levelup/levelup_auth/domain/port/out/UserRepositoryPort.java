@@ -1,8 +1,8 @@
 package com.levelup.levelup_auth.domain.port.out;
 
 import com.levelup.levelup_auth.domain.model.User;
-import com.levelup.levelup_auth.domain.model.UserId;
-import com.levelup.levelup_auth.domain.model.Login;
+import com.levelup.levelup_auth.domain.model.user.UserId;
+import com.levelup.levelup_auth.domain.model.user.Login;
 import java.util.Optional;
 
 public interface UserRepositoryPort {

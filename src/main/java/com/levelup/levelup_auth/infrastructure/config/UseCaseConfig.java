@@ -1,10 +1,10 @@
 package com.levelup.levelup_auth.infrastructure.config;
 
-import com.levelup.levelup_auth.application.port.in.DeleteProfileUseCase;
-import com.levelup.levelup_auth.application.port.in.GetProfileUseCase;
-import com.levelup.levelup_auth.application.port.in.LoginUserUseCase;
-import com.levelup.levelup_auth.application.port.in.RegisterUserUseCase;
-import com.levelup.levelup_auth.application.port.in.UpdateProfileUseCase;
+import com.levelup.levelup_auth.application.port.in.profile.DeleteProfileUseCase;
+import com.levelup.levelup_auth.application.port.in.profile.GetProfileUseCase;
+import com.levelup.levelup_auth.application.port.in.login.LoginUserUseCase;
+import com.levelup.levelup_auth.application.port.in.register.RegisterUserUseCase;
+import com.levelup.levelup_auth.application.port.in.profile.UpdateProfileUseCase;
 import com.levelup.levelup_auth.application.port.out.PasswordEncoderPort;
 import com.levelup.levelup_auth.application.port.out.TokenGeneratorPort;
 import com.levelup.levelup_auth.application.services.DeleteProfileService;

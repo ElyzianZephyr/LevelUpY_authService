@@ -2,12 +2,12 @@
 
 package com.levelup.levelup_auth.presentation.rest.controller;
 
-import com.levelup.levelup_auth.application.port.in.DeleteProfileUseCase;
-import com.levelup.levelup_auth.application.port.in.GetProfileUseCase;
-import com.levelup.levelup_auth.application.port.in.UpdateProfileCommand;
-import com.levelup.levelup_auth.application.port.in.UpdateProfileUseCase;
-import com.levelup.levelup_auth.application.port.in.UserProfileResult;
-import com.levelup.levelup_auth.presentation.rest.dto.UpdateProfileRequest;
+import com.levelup.levelup_auth.application.port.in.profile.DeleteProfileUseCase;
+import com.levelup.levelup_auth.application.port.in.profile.GetProfileUseCase;
+import com.levelup.levelup_auth.application.port.in.profile.UpdateProfileCommand;
+import com.levelup.levelup_auth.application.port.in.profile.UpdateProfileUseCase;
+import com.levelup.levelup_auth.application.port.in.profile.UserProfileResult;
+import com.levelup.levelup_auth.presentation.rest.dto.request.UpdateProfileRequest;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;

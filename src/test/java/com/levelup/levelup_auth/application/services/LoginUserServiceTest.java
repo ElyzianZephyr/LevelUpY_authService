@@ -1,14 +1,14 @@
 package com.levelup.levelup_auth.application.services;
 
 import com.levelup.levelup_auth.application.port.in.JwtTokenPair;
-import com.levelup.levelup_auth.application.port.in.LoginUserCommand;
+import com.levelup.levelup_auth.application.port.in.login.LoginUserCommand;
 import com.levelup.levelup_auth.application.port.out.PasswordEncoderPort;
 import com.levelup.levelup_auth.application.port.out.TokenGeneratorPort;
 import com.levelup.levelup_auth.domain.exceptions.InvalidCredentialsException;
-import com.levelup.levelup_auth.domain.model.Login;
-import com.levelup.levelup_auth.domain.model.Password;
+import com.levelup.levelup_auth.domain.model.user.Login;
+import com.levelup.levelup_auth.domain.model.user.Password;
 import com.levelup.levelup_auth.domain.model.User;
-import com.levelup.levelup_auth.domain.model.UserId;
+import com.levelup.levelup_auth.domain.model.user.UserId;
 import com.levelup.levelup_auth.domain.port.out.UserRepositoryPort;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

@@ -1,11 +1,11 @@
 package com.levelup.levelup_auth.infrastructure.adapter;
 
-import com.levelup.levelup_auth.domain.model.Login;
-import com.levelup.levelup_auth.domain.model.Password;
+import com.levelup.levelup_auth.domain.model.user.Login;
+import com.levelup.levelup_auth.domain.model.user.Password;
 import com.levelup.levelup_auth.domain.model.User;
-import com.levelup.levelup_auth.domain.model.UserId;
+import com.levelup.levelup_auth.domain.model.user.UserId;
 import com.levelup.levelup_auth.infrastructure.persistence.mapper.UserMapper;
-import com.levelup.levelup_auth.infrastructure.persistence.repository.UserJpaRepository;
+import com.levelup.levelup_auth.infrastructure.persistence.repository.JpaUserRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,7 +42,7 @@ class JpaUserRepositoryAdapterTest {
     }
 
     @Autowired
-    private UserJpaRepository userJpaRepository;
+    private JpaUserRepository userJpaRepository;
 
     @Autowired
     private UserMapper userMapper;

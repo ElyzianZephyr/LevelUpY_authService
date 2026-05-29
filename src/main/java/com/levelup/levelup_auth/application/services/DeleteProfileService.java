@@ -1,8 +1,8 @@
 package com.levelup.levelup_auth.application.services;
 
-import com.levelup.levelup_auth.application.port.in.DeleteProfileUseCase;
+import com.levelup.levelup_auth.application.port.in.profile.DeleteProfileUseCase;
 import com.levelup.levelup_auth.domain.exceptions.UserNotFoundException;
-import com.levelup.levelup_auth.domain.model.Login;
+import com.levelup.levelup_auth.domain.model.user.Login;
 import com.levelup.levelup_auth.domain.model.User;
 import com.levelup.levelup_auth.domain.port.out.UserRepositoryPort;
 

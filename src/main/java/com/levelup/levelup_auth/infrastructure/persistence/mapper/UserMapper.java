@@ -1,11 +1,11 @@
 package com.levelup.levelup_auth.infrastructure.persistence.mapper;
 
-import com.levelup.levelup_auth.domain.model.Email;
-import com.levelup.levelup_auth.domain.model.Login;
-import com.levelup.levelup_auth.domain.model.Name;
-import com.levelup.levelup_auth.domain.model.Password;
+import com.levelup.levelup_auth.domain.model.user.Email;
+import com.levelup.levelup_auth.domain.model.user.Login;
+import com.levelup.levelup_auth.domain.model.user.Name;
+import com.levelup.levelup_auth.domain.model.user.Password;
 import com.levelup.levelup_auth.domain.model.User;
-import com.levelup.levelup_auth.domain.model.UserId;
+import com.levelup.levelup_auth.domain.model.user.UserId;
 import com.levelup.levelup_auth.infrastructure.persistence.entity.UserEntity;
 import org.springframework.stereotype.Component;
 
@@ -31,12 +31,10 @@ public class UserMapper {
             return null;
         }
 
-        return new User(
-                new UserId(entity.getId()),
-                new Login(entity.getLogin()),
-                new Password(entity.getPasswordHash()),
-                entity.getEmail() != null ? new Email(entity.getEmail()) : null,
-                entity.getName() != null ? new Name(entity.getName()) : null
-        );
+        return User.builder()
+                .id(new UserId(entity.getId()))
+                .login(new Login(entity.getLogin()))
+                .password(new Password(entity.getPasswordHash()))
+                .build();
     }
 }

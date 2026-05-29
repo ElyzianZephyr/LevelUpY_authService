@@ -1,4 +1,4 @@
-package com.levelup.levelup_auth.application.port.in;
+package com.levelup.levelup_auth.application.port.in.login;
 
 import java.util.Objects;
 

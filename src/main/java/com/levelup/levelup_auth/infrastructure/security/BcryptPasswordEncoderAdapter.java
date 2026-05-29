@@ -1,7 +1,7 @@
 package com.levelup.levelup_auth.infrastructure.security;
 
 import com.levelup.levelup_auth.application.port.out.PasswordEncoderPort;
-import com.levelup.levelup_auth.domain.model.Password;
+import com.levelup.levelup_auth.domain.model.user.Password;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 

@@ -1,4 +1,4 @@
-package com.levelup.levelup_auth.domain.model;
+package com.levelup.levelup_auth.domain.model.user;
 
 import java.util.Objects;
 import java.util.regex.Pattern;

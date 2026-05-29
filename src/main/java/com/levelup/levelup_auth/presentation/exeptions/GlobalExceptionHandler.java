@@ -3,7 +3,7 @@ package com.levelup.levelup_auth.presentation.exeptions;
 import com.levelup.levelup_auth.domain.exceptions.InvalidCredentialsException;
 import com.levelup.levelup_auth.domain.exceptions.UserAlreadyExistsException;
 import com.levelup.levelup_auth.domain.exceptions.UserNotFoundException;
-import com.levelup.levelup_auth.presentation.rest.dto.ErrorResponse;
+import com.levelup.levelup_auth.presentation.rest.dto.response.ErrorResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;

@@ -1,5 +1,7 @@
 package com.levelup.levelup_auth.domain.model;
 
+import com.levelup.levelup_auth.domain.model.user.*;
+
 import java.util.Objects;
 import java.util.Optional;
 
@@ -23,6 +25,7 @@ public class User {
         this.email = email;
         this.name = name;
     }
+
 
     public void changeLogin(Login newLogin) {
         this.login = Objects.requireNonNull(newLogin);
@@ -72,4 +75,46 @@ public class User {
     public int hashCode() {
         return Objects.hash(id);
     }
+
+
+
+    private User(Builder builder) {
+        this.id = Objects.requireNonNull(builder.id, "User ID не может быть null");
+        this.login = Objects.requireNonNull(builder.login, "Login не может быть null");
+        this.password = Objects.requireNonNull(builder.password, "Password не может быть null");
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    public static final class Builder {
+        private UserId id;
+        private Login login;
+        private Password password;
+
+        private Builder() {}
+
+        public Builder id(UserId id) {
+            this.id = id;
+            return this;
+        }
+
+        public Builder login(Login login) {
+            this.login = login;
+            return this;
+        }
+
+        public Builder password(Password password) {
+            this.password = password;
+            return this;
+        }
+
+        public User build() {
+            return new User(this);
+        }
+    }
+
+
+
 }

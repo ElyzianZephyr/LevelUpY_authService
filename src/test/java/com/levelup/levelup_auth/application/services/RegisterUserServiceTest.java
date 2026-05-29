@@ -1,12 +1,12 @@
 package com.levelup.levelup_auth.application.services;
 
 import com.levelup.levelup_auth.application.port.in.JwtTokenPair;
-import com.levelup.levelup_auth.application.port.in.RegisterUserCommand;
+import com.levelup.levelup_auth.application.port.in.register.RegisterUserCommand;
 import com.levelup.levelup_auth.application.port.out.PasswordEncoderPort;
 import com.levelup.levelup_auth.application.port.out.TokenGeneratorPort;
 import com.levelup.levelup_auth.domain.exceptions.UserAlreadyExistsException;
-import com.levelup.levelup_auth.domain.model.Login;
-import com.levelup.levelup_auth.domain.model.Password;
+import com.levelup.levelup_auth.domain.model.user.Login;
+import com.levelup.levelup_auth.domain.model.user.Password;
 import com.levelup.levelup_auth.domain.model.User;
 import com.levelup.levelup_auth.domain.port.out.UserRepositoryPort;
 import org.junit.jupiter.api.BeforeEach;

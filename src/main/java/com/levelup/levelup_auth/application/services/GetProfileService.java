@@ -1,11 +1,11 @@
 package com.levelup.levelup_auth.application.services;
 
-import com.levelup.levelup_auth.application.port.in.GetProfileUseCase;
-import com.levelup.levelup_auth.application.port.in.UserProfileResult;
+import com.levelup.levelup_auth.application.port.in.profile.GetProfileUseCase;
+import com.levelup.levelup_auth.application.port.in.profile.UserProfileResult;
 import com.levelup.levelup_auth.domain.exceptions.UserNotFoundException;
-import com.levelup.levelup_auth.domain.model.Email;
-import com.levelup.levelup_auth.domain.model.Login;
-import com.levelup.levelup_auth.domain.model.Name;
+import com.levelup.levelup_auth.domain.model.user.Email;
+import com.levelup.levelup_auth.domain.model.user.Login;
+import com.levelup.levelup_auth.domain.model.user.Name;
 import com.levelup.levelup_auth.domain.model.User;
 import com.levelup.levelup_auth.domain.port.out.UserRepositoryPort;
 

@@ -1,22 +1,22 @@
 package com.levelup.levelup_auth.infrastructure.adapter;
 
-import com.levelup.levelup_auth.domain.model.Login;
+import com.levelup.levelup_auth.domain.model.user.Login;
 import com.levelup.levelup_auth.domain.model.User;
-import com.levelup.levelup_auth.domain.model.UserId;
+import com.levelup.levelup_auth.domain.model.user.UserId;
 import com.levelup.levelup_auth.domain.port.out.UserRepositoryPort;
 import com.levelup.levelup_auth.infrastructure.persistence.entity.UserEntity;
 import com.levelup.levelup_auth.infrastructure.persistence.mapper.UserMapper;
-import com.levelup.levelup_auth.infrastructure.persistence.repository.UserJpaRepository;
+import com.levelup.levelup_auth.infrastructure.persistence.repository.JpaUserRepository;
 import org.springframework.stereotype.Repository;
 import java.util.Optional;
 
 @Repository
 public class JpaUserRepositoryAdapter implements UserRepositoryPort {
 
-    private final UserJpaRepository jpaRepository;
+    private final JpaUserRepository jpaRepository;
     private final UserMapper mapper;
 
-    public JpaUserRepositoryAdapter(UserJpaRepository jpaRepository, UserMapper mapper) {
+    public JpaUserRepositoryAdapter(JpaUserRepository jpaRepository, UserMapper mapper) {
         this.jpaRepository = jpaRepository;
         this.mapper = mapper;
     }

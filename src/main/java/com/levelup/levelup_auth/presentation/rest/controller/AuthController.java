@@ -1,13 +1,13 @@
 package com.levelup.levelup_auth.presentation.rest.controller;
 
 import com.levelup.levelup_auth.application.port.in.JwtTokenPair;
-import com.levelup.levelup_auth.application.port.in.LoginUserCommand;
-import com.levelup.levelup_auth.application.port.in.LoginUserUseCase;
-import com.levelup.levelup_auth.application.port.in.RegisterUserCommand;
-import com.levelup.levelup_auth.application.port.in.RegisterUserUseCase;
-import com.levelup.levelup_auth.presentation.rest.dto.SignInRequest;
-import com.levelup.levelup_auth.presentation.rest.dto.SignUpRequest;
-import com.levelup.levelup_auth.presentation.rest.dto.TokenResponse;
+import com.levelup.levelup_auth.application.port.in.login.LoginUserCommand;
+import com.levelup.levelup_auth.application.port.in.login.LoginUserUseCase;
+import com.levelup.levelup_auth.application.port.in.register.RegisterUserCommand;
+import com.levelup.levelup_auth.application.port.in.register.RegisterUserUseCase;
+import com.levelup.levelup_auth.presentation.rest.dto.request.SignInRequest;
+import com.levelup.levelup_auth.presentation.rest.dto.request.SignUpRequest;
+import com.levelup.levelup_auth.presentation.rest.dto.response.TokenResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -29,9 +29,9 @@ public class AuthController {
 
     @PostMapping("/sign-up")
     public ResponseEntity<TokenResponse> signUp(@RequestBody SignUpRequest request) {
-        RegisterUserCommand command = new RegisterUserCommand(request.login(), request.password());
+        RegisterUserCommand command = new RegisterUserCommand(request.login(), request.password()); /// поментяь тут
         JwtTokenPair tokenPair = registerUserUseCase.register(command);
-        TokenResponse response = new TokenResponse(tokenPair.accessToken(), tokenPair.refreshToken());
+        TokenResponse response = TokenResponse.from(tokenPair);
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
 
@@ -39,7 +39,7 @@ public class AuthController {
     public ResponseEntity<TokenResponse> signIn(@RequestBody SignInRequest request) {
         LoginUserCommand command = new LoginUserCommand(request.login(), request.password());
         JwtTokenPair tokenPair = loginUserUseCase.login(command);
-        TokenResponse response = new TokenResponse(tokenPair.accessToken(), tokenPair.refreshToken());
+        TokenResponse response = TokenResponse.from(tokenPair);;
         return ResponseEntity.ok(response);
     }
 }
